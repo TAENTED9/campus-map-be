@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: unilag-campus-map-backend
+    env: python
+    region: oregon
+    plan: free
+    runtime: python-3.11
+    buildCommand: cd backend && pip install -r requirements.txt
+    startCommand: cd backend && uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: FRONTEND_URL
+        value: https://your-frontend-service.onrender.com
+        # Replace with your actual frontend service URL
+    routes:
+      - path: /api
+        destination: http://localhost:8000/api
+
+  - type: web
+    name: unilag-campus-map-frontend
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: cd frontend && npm install && npm run build
+    startCommand: cd frontend && npm start
+    envVars:
+      - key: NEXT_PUBLIC_API_URL
+        value: https://your-backend-service.onrender.com
+        # Replace with your actual backend service URL
+    routes:
+      - path: /
+        destination: http://localhost:3000
