@@ -1,8 +1,0 @@
-{
-  "env": [
-    {
-      "key": "NEXT_PUBLIC_API_URL",
-      "value": "YOUR_BACKEND_URL_HERE"
-    }
-  ]
-}
