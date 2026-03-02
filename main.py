@@ -22,6 +22,7 @@ allowed_origins = [
     "http://localhost:3000",  # Next.js dev server
     "http://localhost:3001",
     "http://127.0.0.1:3000",
+    "https://campus-map-fe.vercel.app",  # Production frontend
 ]
 
 # Add production frontend URL if set
