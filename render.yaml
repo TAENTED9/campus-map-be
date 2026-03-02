@@ -2,6 +2,6 @@ services:
   - type: web
     name: campus-map-backend
     env: python
-    pythonVersion: 3.11.8
+    pythonVersion: 3.11
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn -c gunicorn.conf.py main:app
