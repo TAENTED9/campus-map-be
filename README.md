@@ -73,7 +73,7 @@ unilag-map/
 ### 1. Clone or Download
 
 ```bash
-cd unilag-map
+cd campus-map-be
 ```
 
 ### 2. Start the Backend (FastAPI)
